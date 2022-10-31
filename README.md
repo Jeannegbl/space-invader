@@ -3,7 +3,7 @@
 Exercice issu du site : [https://www.geeksforgeeks.org/building-space-invaders-using-pygame-python/](https://www.geeksforgeeks.org/building-space-invaders-using-pygame-python/)
 
 Ce jeu est un classique des jeux vidéos, le joueur peut contrôller un vaisseau spacial. Il a la possibilité de se déplacer sur la gauche ou la droite. 
-Et de tirer des missiles qui partent en ligne droit. 
+Et de tirer des missiles qui partent en ligne droite. 
 
 Par défaut, les contrôles sont : 
  - La flèche gauche (permettant de déplacer le vaisseau à gauche)
@@ -17,6 +17,11 @@ Par défaut, les contrôles sont :
 > python main.py
 
 ## Les objectifs de cet exercice
+
+Forkez ce dépôt, puis travaillez sur votre projet. L'url de votre dépôt devra être communiquée au formateur.
+Pour chaque consigne donnée, concertez-vous afin de savoir ce qui est à réaliser puis implémentez la solution. 
+Réalisez un commit pour chaque fonctionnalité mise en place. 
+
 ### Problème de vitesse
 Vous devriez rapidement réaliser que le jeu est actuellement injouable. En effet, il est bien trop rapide. 
 Ce jeu a été implémenté en utilisant une bibliothèque externe nommée `pygame`.
@@ -41,9 +46,9 @@ Il va donc faloir rajouter :
 Changer la touche espace  avec le click souris. 
 Et le déplacement avec les lettres **ZQSD**
 
-- Modifier les enemmis
+- Modifiez les ennemis
 
-Changez le sprite associé aux enemmis et passez le nombre d'ennemis à 13.
+Changez le sprite associé aux ennemis et passez le nombre d'ennemis à 13.
 
 - Restructurez le code
 
