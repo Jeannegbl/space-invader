@@ -56,6 +56,7 @@ Plusieurs tableaux sont actuellement mis en place pour gérer les ennemis.
 Refactorez le code afin que l'ensemble des informations liées aux ennemis au sein d'une même classe.
 
 - **Il est possible de terminer un niveau**
+
 Faites en sorte de pouvoir tuer les ennemis. Lorsqu'un ennemi est tué, une petite animation doit avoir lieu et l'ennemi disparaître.
 
 - **Pouvoir tirer plusieurs balles simultanément**
