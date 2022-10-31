@@ -41,33 +41,36 @@ Il va donc faloir rajouter :
 ```
 
 ### Les objectifs suivants  
-- Changer le mapping du clavier
+- **Changer le mapping du clavier**
 
 Changer la touche espace  avec le click souris. 
 Et le déplacement avec les lettres **ZQSD**
 
-- Modifiez les ennemis
+- **Modifiez les ennemis**
 
 Changez le sprite associé aux ennemis et passez le nombre d'ennemis à 13.
 
-- Restructurez le code
+- **Restructurez le code**
 
 Plusieurs tableaux sont actuellement mis en place pour gérer les ennemis. 
 Refactorez le code afin que l'ensemble des informations liées aux ennemis au sein d'une même classe.
 
-- Il est possible de terminer un niveau
+- **Il est possible de terminer un niveau**
 Faites en sorte de pouvoir tuer les ennemis. Lorsqu'un ennemi est tué, une petite animation doit avoir lieu et l'ennemi disparaître.
 
-- Pouvoir tirer plusieurs balles simultanément
+- **Pouvoir tirer plusieurs balles simultanément**
 
 Un autre objet serait à mettre en place et s'est les balles. Créez ce nouvel objet et laisser l'utilisateur avoir la possibilité de tirer plusieurs balles à la fois. 
 
-- Réalisez un écran de fin. 
-Si tous les ennemis sont tués, l'application doit afficher un score final.
- Le score sera basé sur le temps total mis pour tuer les ennemeis. 
+- **Réalisez un écran de fin** 
 
-- Ajoutez un premier écran d'interface permettant de définir : 
- - Le nombre d'ennemis
- - Les touches du clavier
- - De lancer une partie
- - D'afficher les derniers scores
+Si tous les ennemis sont tués, l'application doit afficher un score final.
+ Le score sera basé sur le temps total mis pour tuer les ennemis. 
+
+- **Ajoutez un premier écran d'interface**
+
+Ce dernier permettra de définir : 
+- Le nombre d'ennemis
+- Les touches du clavier
+- De lancer une partie
+- D'afficher les derniers scores
