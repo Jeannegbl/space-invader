@@ -45,7 +45,7 @@ mixer.music.load('data/background.wav')
 mixer.music.play(-1)
 
 # player
-playerImage = pygame.image.load('data/spaceship.png')
+playerImage = (pygame.transform.scale(pygame.image.load('data/player.png'), (64,64)))
 player_X = 370
 player_Y = 523
 player_Xchange = 0
@@ -60,7 +60,7 @@ class invader_tab():
     nb = 13
 
 for num in range(invader_tab.nb):
-    invader_tab.image.append(pygame.transform.scale(pygame.image.load('data/corgi.png'), (64, 64)))
+    invader_tab.image.append(pygame.transform.scale(pygame.image.load('data/invader.png'), (64, 64)))
     invader_tab.x.append(random.randint(64, 737))
     invader_tab.y.append(random.randint(30, 180))
     invader_tab.x_change.append(1.2)
@@ -69,7 +69,7 @@ for num in range(invader_tab.nb):
 # Bullet
 # rest - bullet is not moving
 # fire - bullet is moving
-bulletImage = (pygame.transform.scale(pygame.image.load('data/pokeball.png'), (32,32)))
+bulletImage = (pygame.transform.scale(pygame.image.load('data/bullet.png'), (32, 32)))
 bullet_X = 0
 bullet_Y = 500
 bullet_Xchange = 0
@@ -125,7 +125,7 @@ while running:
             if bullet_state is "rest":
                 bullet_X = player_X
                 bullet(bullet_X, bullet_Y)
-                bullet_sound = mixer.Sound('data/capture.wav')
+                bullet_sound = mixer.Sound('data/catch.wav')
                 bullet_sound.play()
         if event.type == pygame.KEYUP:
             player_Xchange = 0
@@ -150,7 +150,7 @@ while running:
             if abs(player_X - invader_tab.x[i]) < 80:
                 for j in range(invader_tab.nb):
                     invader_tab.y[j] = 2000
-                    explosion_sound = mixer.Sound('data/explosion.wav')
+                    explosion_sound = mixer.Sound('data/death.wav')
                     explosion_sound.play()
                 game_over()
                 break
