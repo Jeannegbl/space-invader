@@ -12,6 +12,8 @@ screen_height = 600
 screen = pygame.display.set_mode((screen_width,
                                   screen_height))
 
+clock = pygame.time.Clock()
+
 # caption and icon
 pygame.display.set_caption("Welcome to Space\
 Invaders Game by:- styles")
@@ -54,10 +56,10 @@ invader_X = []
 invader_Y = []
 invader_Xchange = []
 invader_Ychange = []
-no_of_invaders = 8
+no_of_invaders = 13
 
 for num in range(no_of_invaders):
-    invaderImage.append(pygame.image.load('data/alien.png'))
+    invaderImage.append(pygame.transform.scale(pygame.image.load('data/corgi.png'), (64, 64)))
     invader_X.append(random.randint(64, 737))
     invader_Y.append(random.randint(30, 180))
     invader_Xchange.append(1.2)
@@ -101,6 +103,7 @@ def bullet(x, y):
 # game loop
 running = True
 while running:
+    clock.tick(60)
 
     # RGB
     screen.fill((0, 0, 0))
@@ -111,18 +114,18 @@ while running:
         # Controlling the player movement
         # from the arrow keys
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
+            if event.key == pygame.K_q:
                 player_Xchange = -1.7
-            if event.key == pygame.K_RIGHT:
+            if event.key == pygame.K_d:
                 player_Xchange = 1.7
-            if event.key == pygame.K_SPACE:
+        if event.type == pygame.MOUSEBUTTONDOWN:
 
-                # Fixing the change of direction of bullet
-                if bullet_state is "rest":
-                    bullet_X = player_X
-                    bullet(bullet_X, bullet_Y)
-                    bullet_sound = mixer.Sound('data/bullet.wav')
-                    bullet_sound.play()
+            # Fixing the change of direction of bullet
+            if bullet_state is "rest":
+                bullet_X = player_X
+                bullet(bullet_X, bullet_Y)
+                bullet_sound = mixer.Sound('data/bullet.wav')
+                bullet_sound.play()
         if event.type == pygame.KEYUP:
             player_Xchange = 0
 
