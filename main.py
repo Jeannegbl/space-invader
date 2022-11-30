@@ -51,19 +51,20 @@ player_Y = 523
 player_Xchange = 0
 
 # Invader
-invaderImage = []
-invader_X = []
-invader_Y = []
-invader_Xchange = []
-invader_Ychange = []
-no_of_invaders = 13
+class invader_tab():
+    image = []
+    x = []
+    y = []
+    x_change = []
+    y_change = []
+    nb = 13
 
-for num in range(no_of_invaders):
-    invaderImage.append(pygame.transform.scale(pygame.image.load('data/corgi.png'), (64, 64)))
-    invader_X.append(random.randint(64, 737))
-    invader_Y.append(random.randint(30, 180))
-    invader_Xchange.append(1.2)
-    invader_Ychange.append(50)
+for num in range(invader_tab.nb):
+    invader_tab.image.append(pygame.transform.scale(pygame.image.load('data/corgi.png'), (64, 64)))
+    invader_tab.x.append(random.randint(64, 737))
+    invader_tab.y.append(random.randint(30, 180))
+    invader_tab.x_change.append(1.2)
+    invader_tab.y_change.append(50)
 
 # Bullet
 # rest - bullet is not moving
@@ -91,7 +92,7 @@ def player(x, y):
 
 
 def invader(x, y, i):
-    screen.blit(invaderImage[i], (x, y))
+    screen.blit(invader.image[i], (x, y))
 
 
 def bullet(x, y):
@@ -131,8 +132,8 @@ while running:
 
     # adding the change in the player position
     player_X += player_Xchange
-    for i in range(no_of_invaders):
-        invader_X[i] += invader_Xchange[i]
+    for i in range(invader_tab.nb):
+        invader_tab.x[i] += invader_tab.x_change[i]
 
     # bullet movement
     if bullet_Y <= 0:
@@ -143,32 +144,32 @@ while running:
         bullet_Y -= bullet_Ychange
 
     # movement of the invader
-    for i in range(no_of_invaders):
+    for i in range(invader_tab.nb):
 
-        if invader_Y[i] >= 450:
-            if abs(player_X - invader_X[i]) < 80:
-                for j in range(no_of_invaders):
-                    invader_Y[j] = 2000
+        if invader_tab.y[i] >= 450:
+            if abs(player_X - invader_tab.x[i]) < 80:
+                for j in range(invader_tab.nb):
+                    invader_tab.y[j] = 2000
                     explosion_sound = mixer.Sound('data/explosion.wav')
                     explosion_sound.play()
                 game_over()
                 break
 
-        if invader_X[i] >= 735 or invader_X[i] <= 0:
-            invader_Xchange[i] *= -1
-            invader_Y[i] += invader_Ychange[i]
+        if invader_tab.x[i] >= 735 or invader_tab.x[i] <= 0:
+            invader_tab.x_change[i] *= -1
+            invader_tab.y[i] += invader_tab.y_change[i]
         # Collision
-        collision = isCollision(bullet_X, invader_X[i],
-                                bullet_Y, invader_Y[i])
+        collision = isCollision(bullet_X, invader_tab.x[i],
+                                bullet_Y, invader_tab.y[i])
         if collision:
             score_val += 1
             bullet_Y = 600
             bullet_state = "rest"
-            invader_X[i] = random.randint(64, 736)
-            invader_Y[i] = random.randint(30, 200)
-            invader_Xchange[i] *= -1
+            invader_tab.x[i] = random.randint(64, 736)
+            invader_tab.y[i] = random.randint(30, 200)
+            invader_tab.x_change[i] *= -1
 
-        invader(invader_X[i], invader_Y[i], i)
+        invader(invader_tab.x[i], invader_tab.y[i], i)
 
     # restricting the spaceship so that
     # it doesn't go out of screen
