@@ -69,7 +69,7 @@ for num in range(invader_tab.nb):
 # Bullet
 # rest - bullet is not moving
 # fire - bullet is moving
-bulletImage = pygame.image.load('data/bullet.png')
+bulletImage = (pygame.transform.scale(pygame.image.load('data/pokeball.png'), (32,32)))
 bullet_X = 0
 bullet_Y = 500
 bullet_Xchange = 0
@@ -92,7 +92,7 @@ def player(x, y):
 
 
 def invader(x, y, i):
-    screen.blit(invader.image[i], (x, y))
+    screen.blit(invader_tab.image[i], (x, y))
 
 
 def bullet(x, y):
@@ -125,7 +125,7 @@ while running:
             if bullet_state is "rest":
                 bullet_X = player_X
                 bullet(bullet_X, bullet_Y)
-                bullet_sound = mixer.Sound('data/bullet.wav')
+                bullet_sound = mixer.Sound('data/capture.wav')
                 bullet_sound.play()
         if event.type == pygame.KEYUP:
             player_Xchange = 0
